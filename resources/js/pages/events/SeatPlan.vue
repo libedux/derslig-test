@@ -40,7 +40,7 @@ const handleSubmit = () => {
         return
     }
 
-    form.post('/seat-plans');
+    form.get('/payment');
 }
 </script>
 
