@@ -69,8 +69,18 @@ class PaymentController extends Controller
     }
 
 
-    public function show(string $id)
+    public function success()
     {
+        return Inertia::render('payment/Success', [
+            'ticket' => Ticket::with(['event', 'category', 'event.venue'])->first()
+        ]);
+    }
 
+
+    public function show()
+    {
+        return Inertia::render('payment/Success', [
+            'ticket' => Ticket::with(['event', 'category', 'event.venue'])->first()
+        ]);
     }
 }
