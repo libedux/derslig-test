@@ -35,9 +35,7 @@ defineProps({
         <p class="text-gray-600 mb-2">
           <span class="font-semibold">Category:</span> {{ ticket.category.name }} ({{ ticket.category.price }}₺)
         </p>
-        <p class="text-gray-600 mb-2">
-          <span class="font-semibold">Seats:</span> {{ ticket.seats.map(s => s.label).join(', ') }}
-        </p>
+     
         <p class="text-gray-800 font-bold mt-3">
           Total Paid: {{ ticket.total_amount }}₺
         </p>

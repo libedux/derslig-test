@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Ticket extends Model
 {
@@ -18,21 +18,21 @@ class Ticket extends Model
     ];
 
 
-    public function event(): HasOne
+    public function event(): BelongsTo
     {
-        return $this->hasOne(Event::class);
+        return $this->belongsTo(Event::class);
     }
-    public function ticketCategory(): HasOne
+    public function category(): BelongsTo
     {
-        return $this->hasOne(TicketCategory::class);
+        return $this->belongsTo(TicketCategory::class, 'ticket_category_id');
     }
-    public function seat(): HasOne
+    public function seat(): BelongsTo
     {
-        return $this->hasOne(Seat::class);
+        return $this->belongsTo(Seat::class);
     }
-    public function order(): HasOne
+    public function order(): BelongsTo
     {
-        return $this->hasOne(Order::class);
+        return $this->belongsTo(Order::class);
     }
 
 }
